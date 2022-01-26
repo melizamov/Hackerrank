@@ -1,0 +1,73 @@
+
+-- QUERIES
+
+
+SELECT COUNT(column) - COUNT(DISTINCT column)
+FROM table
+------------
+
+SELECT TOP 1 CITY, LEN(CITY)
+FROM STATION
+ORDER BY LEN(CITY), CITY ASC;
+
+SELECT TOP 1 CITY, LEN(CITY)
+FROM STATION
+ORDER BY LEN(CITY) DESC
+
+----------------------------------
+
+SELECT DIStiNCT(CITY)
+FROM STATION
+WHERE CITY LIKE '[aeiou]%';       -  all names starting with a,e,i,o,u
+
+
+--------------------------------------
+
+
+SELECT DISTINCT(CITY)
+FROM STATION
+WHERE CITY LIKE '%[aeiou]';   - all names ending with a,e,i,o,u
+
+------------------------------------
+
+SELECT DISTINCT(CITY)
+FROM STATION
+WHERE CITY LIKE '[aeiou]%[aeiou]'; - all names starting AND ending with vowel
+
+-------------------------------------
+
+SELECT DISTINCT(CITY)
+FROM STATION
+WHERE CITY NOT LIKE '[aeiou]%'; -  all names that don't start with a vowel
+
+-------------------------------------
+
+SELECT DISTINCT(CITY)
+FROM STATION
+WHERE CITY LIKE '[^aeiou]%[^aeiou]'; - all names don't start and end wtih vowels
+
+-------------------------------------
+
+SELECT Name
+FROM STUDENTS
+WHERE Marks>75
+ORDER BY RIGHT(Name,3), ID ASC;  - Names of students that have over 75 points and ordered by last three characters in their name
+
+--------------------------------------
+
+SELECT name
+FROM Employee
+ORDER BY name ASC  ----- order employee names in aiphabetical order
+
+--------------------------------------
+-- Write a query that prints a list of employee names (i.e.: the name attribute) for employees in Employee having a salary greater than 
+per month who have been employees for less than  months. Sort your result by ascending employee_id.
+
+SELECT name
+FROM Employee
+WHERE salary>2000 AND months<10
+ORDER BY employee_id ASC
+
+----------------------------------------------------
+
+
